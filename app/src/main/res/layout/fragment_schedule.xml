@@ -1,13 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_schedule"
-        android:layout_width="wrap_content"
+    <!-- Title Input -->
+    <EditText
+        android:id="@+id/edit_title"
+        android:hint="Enter Task Title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Schedule Screen"
-        android:textSize="24sp"/>
-</FrameLayout>
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Description Input -->
+    <EditText
+        android:id="@+id/edit_description"
+        android:hint="Enter Task Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Pick Date and Time Button -->
+    <Button
+        android:id="@+id/btn_pick_datetime"
+        android:text="Pick Date and Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Selected DateTime Text -->
+    <TextView
+        android:id="@+id/text_selected_datetime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Date/Time Selected"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:textColor="#666666"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Add Task Button -->
+    <Button
+        android:id="@+id/btn_add_task"
+        android:text="Add Task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Upcoming Tasks List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_tasks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>
