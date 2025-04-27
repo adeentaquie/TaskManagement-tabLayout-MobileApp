@@ -1,49 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp">
 
-    <!-- User Details -->
-    <LinearLayout
-        android:id="@+id/profile_info_section"
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/text_name"
-            android:text="Name: Not Set"
-            android:textSize="20sp"
+        <!-- User Info Section -->
+        <LinearLayout
+            android:id="@+id/profile_info_section"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_fullname"
+                android:text="Full Name: Not Set"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/text_phone"
+                android:text="Phone: Not Set"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/text_gender"
+                android:text="Gender: Not Set"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/text_dob"
+                android:text="DOB: Not Set"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <Switch
+            android:id="@+id/switch_theme"
+            android:text="Enable Dark Mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:id="@+id/text_email"
-            android:text="Email: Not Set"
-            android:textSize="18sp"
+            android:layout_below="@id/profile_info_section"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"/>
+        <!-- FloatingActionButton -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_edit_biodata"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <!-- Theme Switch -->
-    <Switch
-        android:id="@+id/switch_theme"
-        android:text="Dark Mode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profile_info_section"
-        android:layout_marginTop="30dp"/>
-
-    <!-- FloatingActionButton -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_edit_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_menu_edit" />
-
-</RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:src="@android:drawable/ic_menu_edit" />
+    </RelativeLayout>
+</ScrollView>
