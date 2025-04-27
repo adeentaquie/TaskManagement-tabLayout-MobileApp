@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/text_profile"
+    <!-- User Details -->
+    <LinearLayout
+        android:id="@+id/profile_info_section"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_name"
+            android:text="Name: Not Set"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/text_email"
+            android:text="Email: Not Set"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Theme Switch -->
+    <Switch
+        android:id="@+id/switch_theme"
+        android:text="Dark Mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile Screen"
-        android:textSize="24sp"/>
-</FrameLayout>
+        android:layout_below="@id/profile_info_section"
+        android:layout_marginTop="30dp"/>
+
+    <!-- FloatingActionButton -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_edit" />
+
+</RelativeLayout>
